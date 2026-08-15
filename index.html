@@ -3,72 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আমার প্রথম ওয়েবসাইট</title>
-    
-    <!-- গুগল অ্যানালিটিক্স কোড (ভবিষ্যতে আপনার আইডি এখানে বসাবেন) -->
-    <!-- <script async src="https://googletagmanager.com"></script> -->
+
+    <title>মুসা | Writer</title>
+
+    <meta name="description"
+          content="মুসা — একজন লেখক। শব্দ, চিন্তা ও অনুভূতির মাধ্যমে মানুষের কাছে পৌঁছানোর একটি ছোট্ট প্রয়াস।">
 
     <style>
-        /* ওয়েবসাইটের ডিজাইন বা CSS */
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            box-sizing: border-box;
         }
-        header {
-            background-color: #0073e6;
-            color: white;
-            padding: 20px;
-            text-align: center;
+
+        html {
+            scroll-behavior: smooth;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+        body {
+            font-family: "Noto Sans Bengali", "SolaimanLipi", Arial, sans-serif;
+            background: #f8f7f3;
+            color: #222;
+            line-height: 1.8;
         }
-        h1 { margin: 0; }
-        .post {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-        }
-        .post h2 { color: #0073e6; }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #333;
-            color: white;
+
+        /* Navigation */
+        nav {
             position: fixed;
-            bottom: 0;
+            top: 0;
+            left: 0;
             width: 100%;
+            padding: 16px 8%;
+            background: rgba(248, 247, 243, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #e5e1d8;
         }
-    </style>
-</head>
-<body>
 
-    <header>
-        <h1>আমার সুন্দর ব্লগ সাইট</h1>
-        <p>স্বাগতম! এটি আমার একদম নতুন ওয়েবসাইট।</p>
-    </header>
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #171717;
+        }
 
-    <div class="container">
-        <!-- প্রথম ব্লগ পোস্ট শুরু -->
-        <div class="post">
-            <h2>আজকের প্রথম লেখা বা আর্টিকেল</h2>
-            <p>প্রকাশের তারিখ: ১৫ আগস্ট, ২০২৬</p>
-            <p>এটি আমার ওয়েবসাইটের প্রথম লেখা। আমি কৃত্রিম বুদ্ধিমত্তা বা AI-এর সাহায্য নিয়ে কোডিং ছাড়াই এই সুন্দর ওয়েবসাইটটি তৈরি করেছি। এখন থেকে আমি এখানে নিয়মিত আমার মনের কথা ও বিভিন্ন তথ্য শেয়ার করবো।</p>
-        </div>
-        <!-- প্রথম ব্লগ পোস্ট শেষ -->
-    </div>
+        .logo span {
+            color: #9b6b43;
+        }
 
-    <footer>
-        <p>© ২০২৬ আমার ওয়েবসাইট। সর্বস্বত্ব সংরক্ষিত।</p>
-    </footer>
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
 
-</body>
-</html>
+        nav a:hover {
+            color: #9b6b43;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 70px;
+            background:
+                radial-gradient(circle at top right, #eadbc9 0, transparent 35%),
+                #f8f7f3;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .small-title {
+            color: #9b6b43;
+            font-size: 17px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 100px);
+            line-height: 1.1;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #9b6b43;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            margin: 6px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #9b6b43;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #754c2c;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid #9b6b43;
+            color: #9b6b43;
+        }
+
+        .btn-outline:hover {
+            background: #9b6b43;
+            color: white;
+        }
+
+        /* General section */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        /* About */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .quote {
+            margin-top: 35px;
+            padding: 25px;
+            border-left: 4px solid #9b6b43;
+            background: white;
+            font-size: 20px;
+            font-style: italic;
+            text-align: left;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Writing topics */
+        .topics {
+            background: #eeeae3;
+        }
+
+        .cards {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #777;
+        }
+
+        /* Articles */
+        .articles {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .article {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .article small {
+            color: #9b6b43;
+        }
+
+        .article h3 {
+            margin: 10px 0;
+            font-size: 23px;
+        }
+
+        .article p {
+            color: #666;
+        }
+
+        /* Contact */
+        .contact {
+            background: #211d19;
+            color: white;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .contact a {
+            color: #e4bd91;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background:
